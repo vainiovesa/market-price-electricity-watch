@@ -34,7 +34,6 @@ face {
   border: 2px solid black;
   height: 30%;
   width: 60%;
-  aspect-ratio: 1 / 1;
   border-radius: 50%;
 }
 
@@ -43,9 +42,15 @@ face {
 }
 
 .y {
-  background-color: #404000;
+  background-color: #808000;
 }
 
 .g {
   background-color: #008000;
+}
+
+#active {
+  filter: brightness(200%);
+  border: 2px solid white;
+  box-shadow: 0 0 10px white;
 }

@@ -8,9 +8,9 @@
     <h1>Electricity Price Traffic Lights</h1>
     <housing>
       <inner>
-        <face class="r"></face>
-        <face class="y"></face>
-        <face class="g"></face>
+        <face class="r" {% if lights["r"] %}id="active"{% endif %}></face>
+        <face class="y" {% if lights["y"] %}id="active"{% endif %}></face>
+        <face class="g" {% if lights["g"] %}id="active"{% endif %}></face>
       </inner>
     </housing>
   </body>
