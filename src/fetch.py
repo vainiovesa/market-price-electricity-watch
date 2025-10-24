@@ -34,8 +34,7 @@ def _read():
             data[timestamp] = price
     return data
 
-def get_price_now():
-    current_time = datetime.now()
+def get_price_now(current_time:datetime):
     date = current_time.strftime("%Y-%m-%d")
     check = date + " 00:15:00+03:00"
     data = _read()

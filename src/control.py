@@ -1,10 +1,12 @@
+from datetime import datetime
 from fetch import get_price_now
 
 YELLOW_BOUNDARY = 5 # Cents (Euro)
 RED_BOUNDARY = 15   # Cents (Euro)
 
-def which():
-    price = get_price_now()
+def get_info():
+    current_time = datetime.now()
+    price = get_price_now(current_time)
     price /= 10 # Default is tens of cents for some reason
 
     red = price > RED_BOUNDARY
@@ -12,8 +14,8 @@ def which():
     green = not red and not yellow
 
     light_control = {"r": red, "y": yellow, "g": green}
-    return light_control
 
+    current_time = current_time.strftime("%H:%M, %d.%m.%Y")
+    price = round(price, 2)
+    return current_time, price, light_control
 
-if __name__=="__main__":
-    print(which())

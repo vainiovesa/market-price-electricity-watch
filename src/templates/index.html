@@ -13,5 +13,14 @@
         <face class="g" {% if lights["g"] %}id="active"{% endif %}></face>
       </inner>
     </housing>
+    <explanation>
+      <p>
+        The lights are controlled by the current market price for electricity in Finland.
+        The light is green with low prices. If the price exceeds <b>{{ info.yb }}</b> cents,
+        the yellow light turns on and if the price exceeds <b>{{ info.rb }}</b> cents, the red light
+        turns on. The data was fetched at <b>{{ info.ct }}</b> when the price was <b>
+        {{ info.price }} cents / kWh</b>.
+      </p>
+    </explanation>
   </body>
 </html>

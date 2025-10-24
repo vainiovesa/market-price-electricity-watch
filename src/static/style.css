@@ -54,3 +54,11 @@ face {
   border: 2px solid white;
   box-shadow: 0 0 10px white;
 }
+
+explanation {
+  background-color: #c0b98b;
+  padding: 1em;
+  border-radius: 1em;
+  max-width: 30%;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+}
