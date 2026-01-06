@@ -4,6 +4,6 @@ RUN pip install flask && pip install entsoe-py
 
 WORKDIR /app
 
-COPY . .
+COPY ./src .
 
-CMD ["python", "src/app.py"]
+CMD ["python", "app.py"]
