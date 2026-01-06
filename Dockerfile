@@ -1,9 +1,11 @@
-FROM python
-
-RUN pip install flask && pip install entsoe-py
+FROM python:3.12
 
 WORKDIR /app
 
-COPY ./src .
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY src/ .
 
 CMD ["python", "app.py"]
