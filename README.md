@@ -8,3 +8,23 @@ A Flask app uses this data to control "traffic lights" to make electricity consu
 
 **The market prices for electricity in Finland on the day of the creation of this project fetched with the program.**
 
+## Instuctions
+```bash
+$ git clone git@github.com:vainiovesa/market-price-electricity-watch.git
+$ cd market-price-electricity-watch
+```
+Get a personal API key from entso-e and put it in [this file](https://github.com/vainiovesa/market-price-electricity-watch/blob/1421b95e84684d6a98ebd0356050a95f58e060fa/src/config.py). Run the project
+
+### With Docker
+```bash
+$ docker compose up
+```
+
+### Without Docker
+```bash
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ cd src
+$ python3 app.py
+```
