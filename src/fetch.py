@@ -4,7 +4,7 @@ import pandas as pd
 import config
 
 API_KEY = config.api_key
-CLIENT = entsoe.EntsoePandasClient(API_KEY)
+CLIENT = entsoe.EntsoePandasClient(API_KEY, retry_count=1, retry_delay=5, timeout=20)
 
 def _get_todays_prices():
     today = datetime.now()
@@ -59,3 +59,6 @@ def get_price_now(current_time:datetime):
     current_price = float(data[fetchtime])
 
     return current_price
+
+if __name__ == "__main__":
+    print(_get_todays_prices())
