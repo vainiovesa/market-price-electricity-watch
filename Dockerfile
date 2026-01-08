@@ -1,11 +1,15 @@
-FROM python:3.12
+FROM python:3.12-alpine
 
 WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt && adduser -D appuser
 
 COPY src/ .
 
-CMD ["python", "app.py"]
+RUN chown -R appuser .
+
+USER appuser
+
+CMD ["python3", "app.py"]
